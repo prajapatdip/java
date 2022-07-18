@@ -1,0 +1,189 @@
+[21:04:46][Dip-Notebook]:~/Documents/project$ vim names.txt
+[21:05:31][Dip-Notebook]:~/Documents/project$ cat names.txt
+Dip Prajapat
+Nirav Prajapat
+Friends
+[21:05:40][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    name.txt
+	modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[21:05:47][Dip-Notebook]:~/Documents/project$ git add .
+[21:06:01][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    name.txt
+	modified:   names.txt
+
+[21:06:05][Dip-Notebook]:~/Documents/project$ git restore --staged names.txt
+[21:06:45][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    name.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   names.txt
+
+[21:06:50][Dip-Notebook]:~/Documents/project$ git add names.txt
+[21:07:19][Dip-Notebook]:~/Documents/project$ git commit -m "names.txt file modified"
+[master 3c912c5] names.txt file modified
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+ delete mode 100644 name.txt
+[21:07:47][Dip-Notebook]:~/Documents/project$ git log
+commit 3c912c50b52b4006656c598448a31968b1614d26 (HEAD -> master)
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:07:47 2022 +0530
+
+    names.txt file modified
+
+commit c28bd101ad1416ed21ff50f06414d10100ead35f
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:03:55 2022 +0530
+
+    names.txt file added
+
+commit fcf6ecfdf2ac194f0f715a348545766a31535702
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Tue Jul 12 19:22:16 2022 +0530
+
+    name.txt file added
+[21:10:31][Dip-Notebook]:~/Documents/project$ rm -rf names.txt
+[21:11:31][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[21:11:36][Dip-Notebook]:~/Documents/project$ git add .
+[21:12:06][Dip-Notebook]:~/Documents/project$ git commit -m "names.txt file deleted"
+[master 04e9034] names.txt file deleted
+ 1 file changed, 3 deletions(-)
+ delete mode 100644 names.txt
+[21:12:22][Dip-Notebook]:~/Documents/project$ git log
+commit 04e9034d54b67f33c16cfd8d35d327cad420dc94 (HEAD -> master)
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:12:22 2022 +0530
+
+    names.txt file deleted
+
+commit 3c912c50b52b4006656c598448a31968b1614d26
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:07:47 2022 +0530
+
+    names.txt file modified
+
+commit c28bd101ad1416ed21ff50f06414d10100ead35f
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:03:55 2022 +0530
+
+    names.txt file added
+
+commit fcf6ecfdf2ac194f0f715a348545766a31535702
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Tue Jul 12 19:22:16 2022 +0530
+
+    name.txt file added
+[21:14:28][Dip-Notebook]:~/Documents/project$ git reset c28bd101ad1416ed21ff50f06414d10100ead35f
+Unstaged changes after reset:
+D	name.txt
+D	names.txt
+[21:14:41][Dip-Notebook]:~/Documents/project$ git log
+commit c28bd101ad1416ed21ff50f06414d10100ead35f (HEAD -> master)
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:03:55 2022 +0530
+
+    names.txt file added
+
+commit fcf6ecfdf2ac194f0f715a348545766a31535702
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Tue Jul 12 19:22:16 2022 +0530
+
+    name.txt file added
+[21:15:55][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    name.txt
+	deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[21:16:20][Dip-Notebook]:~/Documents/project$ git add .
+[21:17:54][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    name.txt
+	deleted:    names.txt
+
+[21:17:59][Dip-Notebook]:~/Documents/project$ touch surenames.txt
+[21:18:20][Dip-Notebook]:~/Documents/project$ git add .
+[21:18:24][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    name.txt
+	renamed:    names.txt -> surenames.txt
+
+[21:18:33][Dip-Notebook]:~/Documents/project$ vim surenames.txt
+[21:18:52][Dip-Notebook]:~/Documents/project$ touch houses.txt
+[21:19:06][Dip-Notebook]:~/Documents/project$ git add .
+[21:19:10][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    names.txt -> houses.txt
+	deleted:    name.txt
+	new file:   surenames.txt
+
+[21:19:26][Dip-Notebook]:~/Documents/project$ git stash
+Saved working directory and index state WIP on master: c28bd10 names.txt file added
+[21:20:00][Dip-Notebook]:~/Documents/project$ git status
+On branch master
+nothing to commit, working tree clean
+[21:21:19][Dip-Notebook]:~/Documents/project$ git log
+commit c28bd101ad1416ed21ff50f06414d10100ead35f (HEAD -> master)
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Mon Jul 18 21:03:55 2022 +0530
+
+    names.txt file added
+
+commit fcf6ecfdf2ac194f0f715a348545766a31535702
+Author: prajapatdip <dipprajapat83@gmail.com>
+Date:   Tue Jul 12 19:22:16 2022 +0530
+
+    name.txt file added
+[21:22:21][Dip-Notebook]:~/Documents/project$ cat names.txt
+[21:22:29][Dip-Notebook]:~/Documents/project$ git stash pop
+Removing names.txt
+Removing name.txt
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   houses.txt
+	new file:   surenames.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    name.txt
+	deleted:    names.txt
+
+Dropped refs/stash@{0} (40c5cc2bafcf70ae8009de816324cd6d2f21bc02)
+[21:23:01][Dip-Notebook]:~/Documents/project$ git add .
+[21:23:11][Dip-Notebook]:~/Documents/project$ git stash
+Saved working directory and index state WIP on master: c28bd10 names.txt file added
+[21:23:15][Dip-Notebook]:~/Documents/project$ git stash clear
+[21:23:34][Dip-Notebook]:~/Documents/project$ 
+
+

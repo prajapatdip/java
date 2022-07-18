@@ -1,0 +1,17 @@
+[21:33:51][Dip-Notebook]:~/Documents/project$ git remote add origin https://github.com/prajapatdip/java.git
+error: remote origin already exists.
+[21:34:29][Dip-Notebook]:~/Documents/project$ git remote -v
+origin	https://github.com/prajapatdip/java.git (fetch)
+origin	https://github.com/prajapatdip/java.git (push)
+[21:44:15][Dip-Notebook]:~/Documents/project$ git push origin master
+Username for 'https://github.com': prajapatdip
+Password for 'https://prajapatdip@github.com': 
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 496 bytes | 496.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/prajapatdip/java.git
+ * [new branch]      master -> master
+
